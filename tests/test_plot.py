@@ -3,6 +3,8 @@
 import pytest
 import analysis
 import numpy as np
+import os
+from pathlib import Path
 
 x = np.array([1, 2, 3])
 y = np.array([6, 7, 10])
@@ -27,3 +29,11 @@ def test_get_info():
     version_dict = analysis.get_info()
     assert version_dict['Python_major_version']>=3
     assert version_dict['Python_minor_version']>=6
+
+def test_data_is_unchanged():
+    fp1 = Path('data/raw_data.csv')
+    d1 = os.stat(fp1)
+    analysis.main()
+    fp2 = Path('data/raw_data.csv')
+    d2 = os.stat(fp2)
+    assert d1 == d2
