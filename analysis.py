@@ -10,15 +10,18 @@ import matplotlib as mp
 
 
 def get_info():
-    print(
-        f'Python version: {platform.python_version()}')  # sys.version_info or sys.version_info.major and sys.version_info.minor
-    print(f'NumPy version: {np.__version__}')
-    print(f'Pandas version: {pd.__version__}')
-    print(f'Matplotlib version: {mp.__version__}')
+    print(f"Python version: {platform.python_version()}")
+    # sys.version_info or sys.version_info.major and sys.version_info.minor
+    print(f"NumPy version: {np.__version__}")
+    print(f"Pandas version: {pd.__version__}")
+    print(f"Matplotlib version: {mp.__version__}")
     print()
-    print(f'Operating System: {platform.system()} {platform.release()}')
-    print(f'encoding: {sys.getfilesystemencoding()}')
-    return {'Python_major_version': sys.version_info.major, 'Python_minor_version': sys.version_info.minor}
+    print(f"Operating System: {platform.system()} {platform.release()}")
+    print(f"encoding: {sys.getfilesystemencoding()}")
+    return {
+        "Python_major_version": sys.version_info.major,
+        "Python_minor_version": sys.version_info.minor,
+    }
 
 
 def import_data(f_name):
@@ -56,15 +59,15 @@ def get_total_extension(stress, strain):
 
 
 def main():
-    fname = 'data/raw_data.csv'
+    fname = "data/raw_data.csv"
 
     get_info()
     data_array = import_data(fname)
     stress, strain = get_stress_and_strain(data_array)
-    plot(strain, stress, 'Stress Strain Curve', 'Strain (mm/mm)', 'Stress (MPa)')
+    plot(strain, stress, "Stress Strain Curve", "Strain (mm/mm)", "Stress (MPa)")
     ts = get_tensile_strength(stress, strain)
     te = get_total_extension(stress, strain)
-    print(f'Tensile Strength: {ts}, Total Extension: {te}')
+    print(f"Tensile Strength: {ts}, Total Extension: {te}")
 
 
 if __name__ == "__main__":

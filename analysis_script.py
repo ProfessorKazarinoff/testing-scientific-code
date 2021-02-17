@@ -1,4 +1,4 @@
-#analysis_script.py
+# analysis_script.py
 
 import numpy as np
 import pandas as pd
@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 # %%
 
-raw_data_df = pd.read_csv('data/raw_data.csv')
+raw_data_df = pd.read_csv("data/raw_data.csv")
 
 # %%
 
@@ -46,6 +46,7 @@ ax.xaxis.label
 
 
 # %%
+
 
 def plot(strain, stress):
     fig, ax = plt.subplots()
