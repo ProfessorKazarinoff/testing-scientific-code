@@ -28,13 +28,13 @@ def test_pandas_version():
     assert actual == expected
 
 
-def test_matplotlib_version():
-    expected = "3.2.2"
-    actual = mpl.__version__
-    assert actual == expected
+# def test_matplotlib_version():
+#     expected = "3.2.2"
+#     actual = mpl.__version__
+#     assert actual == expected
 
 
-def test_system_encoding():
-    expected = "utf-8"
-    actual = sys.getfilesystemencoding()
-    assert actual == expected
+# def test_system_encoding():
+#     expected = "utf-8"
+#     actual = sys.getfilesystemencoding()
+#     assert actual == expected
