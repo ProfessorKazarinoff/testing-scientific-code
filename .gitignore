@@ -228,3 +228,4 @@ venv/
 .vscode/
 .venv/
 venv/
+.pytest_cache/
