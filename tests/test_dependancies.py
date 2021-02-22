@@ -1,10 +1,5 @@
 # test_dependancies.py
 
-import platform
-import sys
-
-import pytest
-
 import numpy as np
 import pandas as pd
 import matplotlib as mpl

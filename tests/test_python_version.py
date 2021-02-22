@@ -1,4 +1,4 @@
-# test_python_version.py
+# tests/test_python_version.py
 
 from pathlib import Path
 import platform
