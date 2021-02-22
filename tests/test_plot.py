@@ -25,3 +25,8 @@ def test_plot_title_label():
 
 def test_figure_object():
     assert type(fig) == matplotlib.figure.Figure
+
+def test_save_png(tmpdir):
+    file = tmpdir.join('plot.png')
+    analysis.plot(x, y, "my_title", "my_x_axis_label", "my_y_axis_label",file.strpath)
+
