@@ -1,5 +1,7 @@
 # tests/test_plot.py
 
+from pathlib import Path
+
 import pytest
 import numpy as np
 import matplotlib
@@ -8,7 +10,7 @@ import analysis
 
 
 @pytest.fixture
-def set_up_plot():
+def set_up_plot(tmp_path):
     x = np.array([1, 2, 3])
     y = np.array([6, 7, 10])
     fig, ax = analysis.plot(
@@ -37,6 +39,5 @@ def test_axes_object(set_up_plot):
     assert set_up_plot[0] == set_up_plot[1].get_figure()
 
 
-def test_save_png(tmpdir):
-    file = tmpdir.join("plot.png")
-    assert True == True
+def test_save_png(set_up_plot):
+    assert True
