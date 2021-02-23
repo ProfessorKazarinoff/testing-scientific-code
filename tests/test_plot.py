@@ -10,7 +10,7 @@ import analysis
 
 
 @pytest.fixture
-def set_up_plot(tmp_path):
+def set_up_plot(tmpdir):
     x = np.array([1, 2, 3])
     y = np.array([6, 7, 10])
     fig, ax = analysis.plot(
