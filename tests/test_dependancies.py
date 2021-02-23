@@ -1,4 +1,4 @@
-# test_dependancies.py
+# tests/test_dependancies.py
 
 import numpy as np
 import pandas as pd
@@ -6,14 +6,15 @@ import matplotlib as mpl
 
 from pathlib import Path
 
-fp = Path(Path.cwd(),'requirements.txt')
-with open(fp,'r') as f:
+fp = Path(Path.cwd(), "requirements.txt")
+with open(fp, "r") as f:
     v = f.readlines()
-d={}
+d = {}
 for l in v:
     r = l.split("==")[0]
     ver = l.split("==")[1].strip()
-    d[r]=ver
+    d[r] = ver
+
 
 def test_numpy_version():
     expected = d["numpy"]
@@ -28,6 +29,6 @@ def test_pandas_version():
 
 
 def test_matplotlib_version():
-     expected = d["matplotlib"]
-     actual = mpl.__version__
-     assert actual == expected
+    expected = d["matplotlib"]
+    actual = mpl.__version__
+    assert actual == expected

@@ -14,6 +14,7 @@ def test_tensile_strength():
     actual = analysis.get_tensile_strength(y, x)
     assert round(expected, 3) == round(actual, 3)
 
+
 def test_total_extension():
     expected = 3 - 1
     actual = analysis.get_total_extension(y, x)

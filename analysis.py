@@ -6,11 +6,12 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+
 def import_data(f_path):
     df = pd.read_csv(f_path)
     np_raw_array = np.array(df)
     return np_raw_array
-   
+
 
 def clean_data(raw_np_array):
     np_array = raw_np_array[1:, :]
@@ -32,9 +33,14 @@ def plot(x, y, title, x_label, y_label, f_name):
     ax.set_title(title)
     ax.set_xlabel(x_label)
     ax.set_ylabel(y_label)
-    plt.savefig(f_name)
+    save_plot(fig, f_name)
     plt.show()
     return fig, ax
+
+
+def save_plot(fig, fname):
+    fig.savefig(fname)
+    return fig
 
 
 def get_tensile_strength(stress, strain):
@@ -46,18 +52,19 @@ def get_total_extension(stress, strain):
 
 
 def main():
-    raw_data_path = Path(Path.cwd(),"data","raw_data.csv")
+    raw_data_path = Path(Path.cwd(), "data", "raw_data.csv")
     raw_data_array = import_data(raw_data_path)
     clean_data_array = clean_data(raw_data_array)
     stress, strain = get_stress_and_strain(clean_data_array)
     title = "Stress Strain Curve"
     xlabel = "Strain (mm/mm)"
     ylabel = "Stress (MPa)"
-    f_name = 'plot.png'
+    f_name = "plot.png"
     plot(strain, stress, title, xlabel, ylabel, f_name)
     ts = get_tensile_strength(stress, strain)
     te = get_total_extension(stress, strain)
     print(f"Tensile Strength: {ts}, Total Extension: {te}")
+
 
 if __name__ == "__main__":
     main()
