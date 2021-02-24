@@ -37,7 +37,3 @@ def test_figure_object(set_up_plot):
 
 def test_axes_object(set_up_plot):
     assert set_up_plot[0] == set_up_plot[1].get_figure()
-
-
-def test_save_png(set_up_plot):
-    assert True

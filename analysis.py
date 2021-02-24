@@ -21,7 +21,7 @@ def clean_data(raw_np_array):
 def get_stress_and_strain(cleaned_data_array):
     d = 0.506
     A0 = np.pi * (d / 2) ** 2
-    F = cleaned_data_array[:, 4]
+    F = cleaned_data_array[:, 4] * 0.001
     stress = F / A0
     strain = cleaned_data_array[:, 5] * 0.01
     return stress, strain
