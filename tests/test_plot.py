@@ -2,9 +2,9 @@
 
 from pathlib import Path
 
-import pytest
-import numpy as np
 import matplotlib
+import numpy as np
+import pytest
 
 import analysis
 

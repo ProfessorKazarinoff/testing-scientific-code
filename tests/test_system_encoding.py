@@ -2,8 +2,6 @@
 
 import sys
 
-import pytest
-
 
 def test_system_encoding():
     expected = "utf-8"

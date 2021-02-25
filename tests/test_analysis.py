@@ -1,6 +1,5 @@
 # tests/test_analysis.py
 
-import pytest
 import numpy as np
 
 import analysis

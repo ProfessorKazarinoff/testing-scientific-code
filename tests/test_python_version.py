@@ -3,8 +3,6 @@
 from pathlib import Path
 import platform
 
-import pytest
-
 
 def test_python_version():
     rt_fp = Path(Path.cwd(), "runtime.txt")
